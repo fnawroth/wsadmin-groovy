@@ -1,0 +1,93 @@
+<!--
+  ~  Copyright (c) Revault Sàrl, <info@revault.ch> 2017
+  ~  License: GPLv3
+  ~
+  -->
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ch.revault.websphere</groupId>
+    <artifactId>wasdmin-groovy</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <properties>
+      <slf4j.version>1.7.16</slf4j.version>
+      <was.home>${env.WAS_HOME}</was.home>
+      <was.version.major>9</was.version.major>
+      <was.version.minor>0</was.version.minor>
+      <was.version.patch>0</was.version.patch>
+      <was.version>${was.version.major}.${was.version.minor}.${was.version.patch}</was.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sources>
+                        <source>
+                            <directory>src/main/java</directory>
+                        </source>
+                    </sources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>ch.revault.websphere.wsadmin.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.ws</groupId>
+            <artifactId>admin.client</artifactId>
+            <systemPath>${env.WAS_HOME}/runtimes/com.ibm.ws.admin.client_${was.version.major}.${was.version.minor}.jar</systemPath>
+            <scope>system</scope>
+            <version>${was.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+</project>

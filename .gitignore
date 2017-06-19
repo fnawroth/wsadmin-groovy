@@ -1,0 +1,10 @@
+target
+*.iml
+target/
+.idea/artifacts
+.idea/libraries
+.idea/.name
+.idea/*.xml
+.idea/copyright/profiles_settings.xml
+.idea/copyright/GPL_Revault.xml
+dependency-reduced-pom.xml
