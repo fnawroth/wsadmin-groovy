@@ -4,7 +4,7 @@ A groovy DSL for Websphere administration, it regroups functionality found in Ad
 to configure Websphere Application Servers.
 
 ## License
-The source code in this repository is licensed under [GPLv3](LICENSE.md)
+The source code in this repository is licensed under [GPLv3](LICENSE.md), Copyright(c) Revault Sàrl <info@revault.ch>
 
 ## Build and run
 ```
