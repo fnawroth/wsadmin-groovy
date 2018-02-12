@@ -39,7 +39,7 @@ class Client {
         this.client = AdminClientFactory.createAdminClient(properties)
         this.configService = new ConfigServiceProxy(client)
         this.session = new Session("wasmaster", false)
-        setScope("Server=server1")
+        setScope("Server=")
     }
 
     final def setScope(scope) {

@@ -3,6 +3,8 @@
 A groovy DSL for Websphere administration, it regroups functionality found in AdminTask and AdminConfig
 to configure Websphere Application Servers.
 
+While the original code (up to now) has focused on configuring WebSphere Traditional, the changes on this branch will mainly push towards configuring WebSphere Network Deployment in WAS9.0
+
 ## License
 The source code in this repository is licensed under [GPLv3](LICENSE.md), Copyright(c) Revault Sàrl <info@revault.ch>
 
@@ -21,7 +23,8 @@ Include this project into your IDE for script development, you should get comple
 
 
 ## Feedback
-You can find us on @revaultch you can use the issue tracker on this project for bug reports or feature requests.
+For feedback on this fork, please use the issue tracker.
+
+The authors of the original project, Revault Sàrl <info@revault.ch>, invite you to give feedback regarding their codebase at <https://github.com/revaultch/wsadmin-groovy>.
+
 Pull requests are welcome!
-
-
